@@ -1,13 +1,12 @@
-function addStudent() {
-    let name = document.getElementById("name").value;
-    let roll = document.getElementById("roll").value;
+function searchStudent() {
+    let roll = document.getElementById("searchRoll").value.trim();
 
-    if (name === "" || roll === "") {
-        alert("Please enter all details");
+    if (roll === "") {
+        document.getElementById("result").textContent =
+            "Please enter a roll number";
         return;
     }
 
-    let li = document.createElement("li");
-    li.textContent = name + " - " + roll;
-    document.getElementById("list").appendChild(li);
+    document.getElementById("result").textContent =
+        "Searching for roll number: " + roll;
 }
